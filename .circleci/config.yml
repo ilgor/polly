@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Add articles to be converted to audio by Polly
           command: |
-            aws s3 sync voiceserverlesswebsite/articles/ s3://polly-to-excellence-code-bucket/articles/
+            aws s3 sync voiceserverlesswebsite/articles/ s3://polly-to-excellence-code-bucket/articles/ --size-only
 
       - run:
           name: Build Website
