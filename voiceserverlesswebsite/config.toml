@@ -1,0 +1,22 @@
+baseURL = "http://polly-to-excellence.s3-website.us-east-2.amazonaws.com"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Rout to excellence"
+theme = "hugo-theme-learn-master"
+uglyurls = true
+
+[params]
+    description = "A place of excellence"
+    author = "Ilgor"
+    showVisitedLinks = true
+
+[Lnaguages]
+[Languages.en]
+title = "Route to Excellence"
+weight = 1
+languageName = "English"
+
+[Languages.fr]
+title = "Ajoyiblik yulida"
+weight = 2
+languageName = "Franc'as"
