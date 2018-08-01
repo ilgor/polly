@@ -1,0 +1,3 @@
+<div>
+    <audio controls controlsList="nodownload" src = {{ (printf "%s/%s" .Site.Params.pollyMediaURL (.Get "src")) | safeURL }} />
+</div>
