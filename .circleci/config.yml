@@ -33,12 +33,12 @@ jobs:
       #     command: |
       #       aws s3 sync voiceserverlesswebsite/articles/ s3://YOUR_CODE_BUCKET/articles/
 
-      # - run:
-      #     name: Build Website
-      #     command: |
-      #       cd voiceserverlesswebsite
-      #       hugo
+      - run:
+          name: Build Website
+          command: |
+            cd voiceserverlesswebsite
+            hugo
 
-      # - deploy:
-      #     command: |
-      #       aws s3 sync --delete --acl "public-read" --sse "AES256" voiceserverlesswebsite/public/ s3://YOUR_WEBSITE_BUCKET
+      - deploy:
+          command: |
+            aws s3 sync --delete --acl "public-read" --sse "AES256" voiceserverlesswebsite/public/ s3://polly-to-excellence
