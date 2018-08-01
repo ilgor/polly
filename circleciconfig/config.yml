@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: amazonlinux
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Python 3.6
+          command: |
+            yum install -y epel-release
+            yum install -y python36 python36-devel python36-pip
+
+      - run:
+          name: Install AWS CLI
+          command: |
+            pip-3.6 install awscli
+
+      - run:
+          name: Install Hugo
+          command: |
+            cp hugo_installation_config.txt /etc/yum.repos.d/CentOS-hugo.repo
+            yum install -y hugo
+            hugo version
+
+      # - run:
+      #     name: Add articles to be converted to audio by Polly
+      #     command: |
+      #       aws s3 sync voiceserverlesswebsite/articles/ s3://YOUR_CODE_BUCKET/articles/
+
+      # - run:
+      #     name: Build Website
+      #     command: |
+      #       cd voiceserverlesswebsite
+      #       hugo
+
+      # - deploy:
+      #     command: |
+      #       aws s3 sync --delete --acl "public-read" --sse "AES256" voiceserverlesswebsite/public/ s3://YOUR_WEBSITE_BUCKET
