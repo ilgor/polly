@@ -9,7 +9,8 @@ uglyurls = true
     description = "A place of excellence"
     author = "Ilgor"
     showVisitedLinks = true
-    pollyMediaURL = "http://s3-website.us-east-2.amazonaws.com/polly-to-excellence-polly-bucket"
+    pollyMediaURL = "https://s3.us-east-2.amazonaws.com/polly-to-excellence-polly-bucket"
+
 
 [Lnaguages]
 [Languages.en]
