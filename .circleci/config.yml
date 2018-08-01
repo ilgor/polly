@@ -12,7 +12,6 @@ jobs:
       - run:
           name: Install Python 3.6
           command: |
-            yum install -y epel-release
             yum install -y python36 python36-devel python36-pip
 
       - run:
